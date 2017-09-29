@@ -8,27 +8,27 @@ import static org.junit.Assert.assertTrue;
 public class LeapYearTest {
 
     @Test
-    public void not_divisible_by_4_is_not_leap_year() {
+    public void years_not_divisible_by_4_are_common_year() {
         assertFalse(Year.isLeap(2001));
     }
 
     @Test
-    public void divisible_by_4_and_not_by_100_is_leap_year() {
+    public void years_divisible_by_4_but_not_by_100_are_leap_year() {
         assertTrue(Year.isLeap(1996));
     }
 
     @Test
-    public void divisible_by_100_and_not_400_is_not_leap_year() {
+    public void years_divisible_by_100_but_not_by_400_are_common_year() {
         assertFalse(Year.isLeap(1900));
     }
 
     @Test
-    public void divisible_by_400_is_leap_year() {
+    public void years_divisible_by_400_are_leap_year() {
         assertTrue(Year.isLeap(2000));
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void year_0_is_not_supported() {
+    public void year_zero_not_supported() {
         Year.isLeap(0);
     }
 
